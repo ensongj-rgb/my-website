@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Navbar Example</title>
+  <link rel="stylesheet" href="css/style.css">
+   
+</head>
+
+
+<body>
+    <div id="header"></div>
+
+<div class="banner">
+  <picture>
+    <source srcset="images/banner1-mobile.png" media="(max-width: 768px)">
+    <img src="images/banner1.png" alt="Banner" >
+  </picture>
+    <a href="#menu" class="banner-btn">See Menu</a>
+</div>
+
+
+
+<div class="text-image-banner">
+  <div class="text-content">
+    <h2>Spanish Latte</h2>
+    <p>
+      A perfect harmony of bold espresso, creamy fresh milk, and the sweetness of condensed milk. Served iced for a smooth and refreshing pick-me-up that’s both strong and indulgent—your ideal balance of energy and comfort in every sip.
+    </p>
+  </div>
+  <div class="image-content">
+    <img src="images/cofeebanner.png" alt="Gingersnaps Experience">
+  </div>
+</div>
+
+
+<!-- ...existing code... -->
+<div class="featured-coffee-section">
+  <h2 class="featured-coffee-title">Featured Coffee</h2>
+  <div class="featured-coffee-grid">
+    <div class="coffee-item">
+      <img src="images/coffee 1.png" alt="Coffee 1">
+      <div class="coffee-info">
+        <h3>Espresso Classic</h3>
+        <a href="#menu" class="coffee-btn">Order Now</a>
+      </div>
+    </div>
+    <div class="coffee-item">
+      <img src="images/coffee 2.png" alt="Coffee 2">
+      <div class="coffee-info">
+        <h3>Caramel Macchiato</h3>
+        <a href="#menu" class="coffee-btn">Order Now</a>
+      </div>
+    </div>
+    <div class="coffee-item">
+      <img src="images/coffee 3.png" alt="Coffee 3">
+      <div class="coffee-info">
+        <h3>Mocha Delight</h3>
+        <a href="#menu" class="coffee-btn">Order Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ...existing code... -->
+
+
+<!-- ...existing code... -->
+<div class="video-section">
+  <h2 class="video-title">Discover Our Coffee Story</h2>
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6skcgBvorDk?si=zcwguTraF6rbDlH0" 
+    title="Discover Our Coffee Story" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+  </div>
+</div>
+<!-- ...existing code... -->
+
+
+  <script>
+
+    const hamburger = document.getElementById('navbarHamburger');
+    const menu = document.getElementById('navbarMenu');
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+    hamburger.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        menu.classList.toggle('open');
+      }
+    });
+    
+  </script>
+
+ <script>
+    // Load header
+    fetch("partials/header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Load footer
+    fetch("partials/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+
+
+ <div id="footer"></div>
+
+
+</body>
+</html>

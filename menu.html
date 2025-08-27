@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu | Gingersnaps Coffee</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="menu-section">
+    <h1 class="menu-title">Our Coffee Menu</h1>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/Coffee 1.png" alt="Espresso Classic">
+        <div class="menu-info">
+          <h3>Caramel Macchiato</h3>
+          <a href="#" class="menu-btn">More Info</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Coffee 2.png" alt="Caramel Macchiato">
+        <div class="menu-info">
+          <h3>Matcha Latte</h3>
+          <a href="#" class="menu-btn">More Info</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Coffee 3.png" alt="Mocha Delight">
+        <div class="menu-info">
+          <h3>Ice Americano</h3>
+          <a href="#" class="menu-btn">More Info</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Coffee 4.png" alt="Vanilla Latte">
+        <div class="menu-info">
+          <h3>Spanish Latte</h3>
+          <a href="#" class="menu-btn">More Info</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="images/Coffee 5.png" alt="Hazelnut Brew">
+        <div class="menu-info">
+          <h3>Ice Mocha Frappe</h3>
+          <a href="#" class="menu-btn">More Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    // Load header
+    fetch("partials/header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Load footer
+    fetch("partials/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+</body>
+</html>

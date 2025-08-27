@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Gingersnaps Coffee</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <h1 class="about-main-title" style="text-align:center; color:#d2691e; margin:48px 0 32px 0; font-size:2.5rem;">About Us</h1>
+
+ <section class="about-section">
+    <div class="about-row">
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>
+          Johnny's Cup Coffee began with a passion for crafting the perfect cup. From humble beginnings, we’ve grown into a community hub where friends gather and memories are made over delicious coffee.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/about1.jpg" alt="Our Story">
+      </div>
+    </div>
+    <div class="about-row reverse">
+      <div class="about-text">
+        <h2>Our Beans</h2>
+        <p>
+          We source only the finest beans from sustainable farms. Each batch is roasted to perfection, ensuring every sip is rich, smooth, and full of flavor.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/about2.jpg" alt="Our Beans">
+      </div>
+    </div>
+    <div class="about-row">
+      <div class="about-text">
+        <h2>Our Community</h2>
+        <p>
+          At Johnny's Cup, we believe in giving back. We support local initiatives and create a welcoming space for everyone to enjoy, connect, and be inspired.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/about3.jpg" alt="Our Community">
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    // Load header
+    fetch("partials/header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Load footer
+    fetch("partials/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+
+  </body>
+</html>
