@@ -8,6 +8,33 @@
    
 </head>
 
+<script>
+  // Load header
+  fetch("partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Add mobile menu toggle after header is loaded
+      const hamburger = document.getElementById('navbarHamburger');
+      const menu = document.getElementById('navbarMenu');
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('open');
+        });
+        hamburger.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            menu.classList.toggle('open');
+          }
+        });
+      }
+    });
+
+  // Load footer
+  fetch("partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>  
 
 <body>
     <div id="header"></div>
@@ -80,45 +107,7 @@
 
 
 
- <script>
-  // Load header
-  fetch("partials/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
 
-      // Add mobile menu toggle after header is loaded
-      const hamburger = document.getElementById('navbarHamburger');
-      const menu = document.getElementById('navbarMenu');
-      if (hamburger && menu) {
-        hamburger.addEventListener('click', () => {
-          menu.classList.toggle('open');
-        });
-        hamburger.addEventListener('keypress', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            menu.classList.toggle('open');
-          }
-        });
-      }
-    });
-
-  // Load footer
-  fetch("partials/footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("footer").innerHTML = data);
-</script>
-
- <script>
-    // Load header
-    fetch("partials/header.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("header").innerHTML = data);
-
-    // Load footer
-    fetch("partials/footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data);
-  </script>
 
 
  <div id="footer"></div>
