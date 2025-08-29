@@ -793,53 +793,52 @@ body {
     }
 
 /* Map Section */
- .store-locator-section {
-  max-width: 1200px;   /* desktop width */
-  margin: 80px auto 40px;
-  padding: 20px;
-  text-align: center;
+ #mapContainer {
+      width: 1200px;
+      height: 400px;
+       Padding: 20px;
+    }
+
+    #embeddedMap {
+      width: 100%;
+      height: 400px;
+    }
+    
+    .col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
 }
 
-.store-locator-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
 }
 
-#locationSelect {
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  width: 250px;   /* fixed width for desktop */
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-#mapContainer {
-  width: 100%;
-  height: 450px;
-  margin-top: 20px;
-}
-
-#embeddedMap iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 8px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .store-locator-section {
-    margin: 50px auto 30px; /* less spacing */
-    padding: 15px;
-  }
-
-  #locationSelect {
-    width: 100%;   /* full width on mobile */
-    font-size: 0.95rem;
-  }
-
-  #mapContainer {
-    height: 300px;  /* smaller map on mobile */
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
   }
 }
+
+#regionDropdown, #cityDropdown {
+  color: #ca2020;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .col-25, .col-75, input[type=submit], #regionDropdown, #cityDropdown {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
