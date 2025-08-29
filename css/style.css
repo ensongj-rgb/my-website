@@ -847,12 +847,13 @@ body {
 @media screen and (max-width: 600px) {
       
 .container {
-   margin-top: 40px;
+   margin-top: 0px;
     
 }
 
    .map-title {
     font-size: 1.2rem;
+    margin-top: 30px;
     margin-bottom: 8px;
     text-align: center;  
   }    
