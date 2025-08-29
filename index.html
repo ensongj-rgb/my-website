@@ -105,7 +105,104 @@
   </div>
 </div>
 
+<div class="container">
+<div class="row">
+      <div class="col-25">
+  <label for="regionDropdown">Region:</label>
+  <select id="regionDropdown" onchange="updateCityDropdown()">
+    <!--<option value="north">North</option>
+    <option value="south">South</option>-->
+    <option value="ncr">NCR </option>
+    <option value="luz">LUZON </option>
+    <option value="vis">VISAYAS </option>
+    <option value="min">MINDANAO </option>
+  </select>
+  </div>
 
+  <div class="col-75">
+    <label for="cityDropdown">Stores:</label>
+    <select id="cityDropdown" onchange="updateEmbeddedMap()"><option value="Default">Default</option><option value="Dainese Greenhills">Greenhills</option><option value="Dainese Ortigas">Ortigas</option><option value="Dainese Uptown">Uptown</option><option value="Forged Festival Mall">Forged Festival Mall</option><option value="Forged Greenhills">Forged Greenhills</option><option value="Forged Makati Cinema Square">Forged Makati Cinema Square</option><option value="Forged Shangri-La">Forged Shangri-La</option><option value="MotoMarket Alabang">MotoMarket Alabang</option><option value="MotoMarket Eton Centris">MotoMarket Eton Centris</option><option value="MotoMarket Greenhills">MotoMarket Greenhills</option><option value="MotoMarket Libis">MotoMarket Libis</option><option value="MotoMarket Makati">MotoMarket Makati</option><option value="MotoMarket Pasay">MotoMarket Pasay</option><option value="MotoMarket Uptown Parade">MotoMarket Uptown Parade</option><option value="MotoStyle Alabang Town Center">MotoStyle Alabang Town Center</option><option value="MotoStyle Ayala Malls Manila Bay">MotoStyle Ayala Malls Manila Bay</option><option value="MotoStyle Estancia Mall">MotoStyle Estancia Mall</option><option value="MotoStyle SM Aura Premier">MotoStyle SM Aura Premier</option><option value="MotoStyle Sta. Lucia East Grand Mall">MotoStyle Sta. Lucia East Grand Mall</option><option value="Motoworld Ayala Malls Cloverleaf">Motoworld Ayala Malls Cloverleaf</option><option value="Motoworld Festival Mall">Motoworld Festival Mall</option><option value="Motoworld Glorietta 3">Motoworld Glorietta 3</option><option value="Motoworld Robinson Las Pinas">Motoworld Robinson Las Pinas</option><option value="Motoworld SM Fairview">Motoworld SM Fairview</option><option value="Motoworld SM Mall of Asia">Motoworld SM Mall of Asia</option><option value="Motoworld SM Marikina">Motoworld SM Marikina</option><option value="Motoworld SM Megamall">Motoworld SM Megamall</option><option value="Motoworld SM North Edsa">Motoworld SM North Edsa</option></select>
+   </div>
+   </div>
+   </div><br>
+
+    <div id="embeddedMap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.88567456529!2d121.0414507!3d14.6055879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b77093b67e21%3A0xf6a06c8f85e8e637!2sMotoMarket%20Greenhills!5e0!3m2!1sen!2sph!4v1699932188264!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  
+
+  <script>
+    var cityOptions = {
+      ncr: {
+      	"Default":'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7721.7874149600675!2d121.04066144427128!3d14.605130425706813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7c70252256f%3A0x7e10bf6f13362b48!2sCandid%20Coffee%20Greenhills!5e0!3m2!1sfil!2sph!4v1756298608091!5m2!1sfil!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        "Greenhills":'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7721.7874149600675!2d121.04066144427128!3d14.605130425706813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7c70252256f%3A0x7e10bf6f13362b48!2sCandid%20Coffee%20Greenhills!5e0!3m2!1sfil!2sph!4v1756298608091!5m2!1sfil!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        "Ortigas":'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30887.14250261356!2d121.02521170329837!3d14.605181376885689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9c95ea8cc81%3A0xafdb859885ad9e23!2sCache%20Coffee%20%26%20Cocktails!5e0!3m2!1sfil!2sph!4v1756298676030!5m2!1sfil!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        "Uptown":'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30893.882264341213!2d121.0152796743164!3d14.557124799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a147dd2459%3A0xacd324469fbd66cc!2sharlan%20%2B%20holden%20coffee%20-%20uptown!5e0!3m2!1sfil!2sph!4v1756298730806!5m2!1sfil!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        
+      },
+      luz: {
+      	"Default":'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.2732417697525!2d121.05787549999998!3d14.2372763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7daa6a39e50d%3A0xa06b681719f27f63!2sMotoworld%20Solenad%203!5e0!3m2!1sen!2sph!4v1699941871055!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+		"Sta. Rosa":'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247493.83785942342!2d120.75684899453123!3d14.247900999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7d68b69cefe5%3A0xac11cacd70b5e997!2sDaily%20Coffee%20and%20Tea%20Sta.%20Rosa!5e0!3m2!1sfil!2sph!4v1756298984277!5m2!1sfil!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+      	"Solenad 3":'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7734.426749975583!2d121.05335549425405!3d14.24077154399005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7d180bdff4c1%3A0x49a8fed9a99a58c5!2s18%20Days%20Coffee%20Roasters!5e0!3m2!1sfil!2sph!4v1756299279847!5m2!1sfil!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        
+      },
+      vis: {
+      	"Default":'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3925.3026820601212!2d123.9037701!3d10.3176437!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9994a9f2a477f%3A0x8525fbb2aad40af7!2sForged%20Ayala%20Cebu!5e0!3m2!1sen!2sph!4v1699940068996!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+      	"Cebu":'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3925.3026820601212!2d123.9037701!3d10.3176437!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9994a9f2a477f%3A0x8525fbb2aad40af7!2sForged%20Ayala%20Cebu!5e0!3m2!1sen!2sph!4v1699940068996!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        
+      },
+      min: {
+        "Default":'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3946.152113631551!2d124.6519638!3d8.4845867!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fff3376c0f2cb1%3A0x940a9ac2aee772dd!2sSM%20CDO%20Downtown%20Premier!5e0!3m2!1sen!2sph!4v1699941963104!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        "SM CDO Downtown Premier":'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3946.152113631551!2d124.6519638!3d8.4845867!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fff3376c0f2cb1%3A0x940a9ac2aee772dd!2sSM%20CDO%20Downtown%20Premier!5e0!3m2!1sen!2sph!4v1699941963104!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        "SM City Davao Ecoland":'<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63351.14033351765!2d125.5745764!3d7.0741458!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f9735222a4db83%3A0x98ce89a604b2f0a1!2sMotoworld%20SM%20City%20Davao!5e0!3m2!1sen!2sph!4v1699941989717!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        "SM Lanang Premier":'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.2321307357583!2d125.63142029999999!3d7.099072199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f96d7f408fe6f7%3A0xc293a3d41ccbd8a3!2sMotoworld%20SM%20Lanang%20Premier!5e0!3m2!1sen!2sph!4v1699941976303!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+      },
+    };
+
+    function updateCityDropdown() {
+      var regionDropdown = document.getElementById('regionDropdown');
+      var cityDropdown = document.getElementById('cityDropdown');
+      var mapContainer = document.getElementById('mapContainer');
+      var embeddedMap = document.getElementById('embeddedMap');
+
+      var selectedRegion = regionDropdown.value;
+
+      // Clear existing options
+      cityDropdown.innerHTML = '';
+
+      // Populate city options based on the selected region
+      Object.keys(cityOptions[selectedRegion]).forEach(function(city) {
+        var option = document.createElement('option');
+        option.value = city;
+        option.text = city;
+        cityDropdown.add(option);
+      });
+
+      // Show/hide map container based on the region
+      mapContainer.style.display = (selectedRegion === 'north') ? 'block' : 'none';
+
+      // Clear existing embedded map content
+      embeddedMap.innerHTML = '';
+
+      // Update the embedded map based on the selected city
+      updateEmbeddedMap();
+    }
+
+    function updateEmbeddedMap() {
+      var cityDropdown = document.getElementById('cityDropdown');
+      var selectedCity = cityDropdown.value;
+      var embeddedMap = document.getElementById('embeddedMap');
+
+      // Get the embed code for the selected city
+      var embedCode = cityOptions[document.getElementById('regionDropdown').value][selectedCity];
+
+      // Append the embed code to the embedded map container
+      embeddedMap.innerHTML = embedCode;
+    }
+
+    // Initial population of city dropdown
+    updateCityDropdown();
+  </script>
+
+</div>
 
 
 
