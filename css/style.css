@@ -793,6 +793,13 @@ body {
     }
 
 /* Map Section */
+.map-title {
+  color: #d2691e;
+  font-size: 2rem;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+
  #mapContainer {
        width: 1200px;
   max-width: 100%;
@@ -835,6 +842,12 @@ body {
 .container {
    margin-top: 40px   
 }
+
+   .map-title {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }    
+      
   .col-25, .col-75, input[type=submit] {
     width: 100%;
     margin-top: 30px;
