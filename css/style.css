@@ -793,6 +793,12 @@ body {
     }
 
 /* Map Section */
+
+.container {
+   margin-top: 30px  
+   text-align: center;   
+}
+
 .map-title {
   color: #d2691e;
   font-size: 2rem;
