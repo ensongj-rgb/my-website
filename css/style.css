@@ -796,6 +796,8 @@ body {
  #mapContainer {
       width: 1200px;
       height: 400px;
+       margin-top:30px;
+       margin-bottom:30px;
        Padding: 20px;
     }
 
